@@ -1,0 +1,83 @@
+body
+{
+    background-color:rgb(12, 14, 16)
+}
+#menu
+{
+ width: 1000px;
+ border: 1px solid #0d0c0c;
+ height: 80px;
+ background-color: #181818;
+ font-family: Helvetica,Arial, sans-serif;
+ font-size: 15px;
+ font-weight: bold;
+ border-radius: 10px;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+}
+#menu ul
+{
+  margin-top:  30px;
+  margin-left: 100px;
+}
+#menu ul li {
+    list-style-type: none;
+    display: inline-block; /* Thay đổi từ inline sang inline-block */
+    margin-left: 0px;
+  }
+  
+#menu ul li a:link 
+{
+   color: #FFF;
+   text-decoration: none;
+   text-transform: uppercase;
+   padding-top: 0px;
+   padding-bottom: 40px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+              
+#menu ul li a:visited
+{
+   color: #FFF;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+              
+#menu ul li a {
+    position: relative; /* Đặt vị trí tương đối để sử dụng cho phần tử giả (pseudo-element) */
+    display: inline-block; /* Thay đổi thành inline-block để không chiếm toàn bộ chiều rộng */
+    padding: 40px 20px; /* Đặt padding cho cả trên/bên dưới và trái/phải */
+}
+#menu ul li a:after {
+    content: ''; /* Tạo ra một phần tử ảo */
+    position: absolute;
+    bottom: 20px; /* Đặt vị trí của gạch dưới ở dưới cùng */
+    left: 0; /* Đặt từ bên trái */
+    width: 100%; /* Độ dài ban đầu là 100% */
+    height: 2px; /* Độ dày của đường gạch dưới */
+    background: #FFF; /* Màu sắc của đường gạch dưới */
+    -webkit-transform: scaleX(0); /* Ban đầu sẽ không hiển thị (thu nhỏ lại) */
+    transform: scaleX(0);
+    -webkit-transform-origin: right center; /* Điểm bắt đầu từ phải */
+    transform-origin: right center;
+    -webkit-transition: -webkit-transform .6s cubic-bezier(.19,1,.22,1); /* Hiệu ứng mở rộng */
+    transition: -webkit-transform .6s cubic-bezier(.19,1,.22,1);
+    transition: transform .6s cubic-bezier(.19,1,.22,1);
+    transition: transform .6s cubic-bezier(.19,1,.22,1), -webkit-transform .6s cubic-bezier(.19,1,.22,1);
+}
+
+#menu ul li a:hover:after {
+    -webkit-transform: scaleX(1); /* Khi hover, gạch dưới mở rộng 100% */
+    transform: scaleX(1);
+    -webkit-transform-origin: left center; /* Điểm bắt đầu thu lại từ trái */
+    transform-origin: left center;
+}
+
+._logoTest img {
+    position: absolute; /* Đặt hình ảnh ở vị trí tuyệt đối */
+    top: 0; /* Đặt nó ở góc trên cùng của trang */
+    left: 5; /* Căn lề trái */
+    width: 180px; /* Chiều rộng logo */
+    height: auto; /* Chiều cao tự động dựa trên chiều rộng */
+}

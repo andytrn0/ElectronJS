@@ -1,0 +1,58 @@
+body
+{
+    background-color:rgb(12, 14, 16)
+}
+#menu
+{
+ width: 900px;
+ margin: 0;
+    padding: 0;
+    background-color: #000;
+    font: 16px/26px D-DIN-Regular,Arial,Verdana,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    color: #fff;
+    width: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased
+ border-radius: 10px;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+}
+#menu ul
+{
+  margin-top:  30px;
+}
+#menu ul li
+{
+  list-style-type: none;
+  display: inline;
+  margin-left: 50px;
+}
+#menu ul li a:link 
+{
+   color: #FFF;
+   text-decoration: none;
+   text-transform: uppercase;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+              
+#menu ul li a:visited
+{
+   color: #FFF;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+              
+#menu ul li a:hover
+{
+   color: #FFF;
+   background-color: #81B101;
+   -webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+   -moz-box-shadow:    0px 4px 5px rgba(50, 50, 50, 0.93);
+   box-shadow:         0px 4px 5px rgba(50, 50, 50, 0.93);
+}
