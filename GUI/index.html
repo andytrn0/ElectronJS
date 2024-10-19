@@ -3,6 +3,8 @@
   <head>
     <title>Trang chủ </title>
     <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
   </head>
 
@@ -10,18 +12,95 @@
   <span class="_logoImg"><img src="../IMAGE/LOGOimg.png" alt="" role="presentation"></span> 
   <div id="menu">
     <ul>
-      <li><a href="#">TRANG CHỦ</a></li>
-      <li><a href="#">DỊCH VỤ</a></li>
-      <li><a href="#">NHẬT KÍ</a></li>
-      <li><a href="#">CÀI ĐẶT</a></li>
-      <li><a href="#">LIÊN HỆ</a></li>
-    </ul>  
+      <li><a href="#"><i class="fas fa-home"></i> TRANG CHỦ</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i> DỊCH VỤ</a></li>
+      <li><a href="#"><i class="fas fa-book"></i> NHẬT KÍ</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i> CÀI ĐẶT</a></li>
+      <li><a href="#"><i class="fas fa-envelope"></i> LIÊN HỆ</a></li>
   </div>
   <span class="_logoTest"><img src="../IMAGE/logo.png" alt="" role="presentation"></span> 
-
-
-
- 
+    <div id="divContact">
+  
+    <span class="_logoContact"><img src="../IMAGE/Call.png" alt="" role="presentation" Onclick=""></span> 
+    <span class="_logoContact"><img src="../IMAGE/chat.svg" alt="" role="presentation" Onclick="Chat()"></span> 
+    <span class="notification"><img  style="bottom:20px; right:57px;" src="../IMAGE/notification.png" alt="" role="presentation"></span> 
+    <h5 style="right:63px; bottom:0px;" class="h5">3</h5>
+  </div>
+<!------Tạo 2 div CL và SV----->
+<div id="formDiv">
+  <div id="formCL_SV">
+  </div>
+  <span class="_logoConnect"><img src="../IMAGE/connect.png" alt="" role="presentation"></span> 
+  <div id="formCL_SV">
+  </div>
+</div>
 </body>
+<!----Chatbox-->
+<div id="Chatbox" style="display: none;">
+  <div class="titleChat">
+    <span class="logoGroup"><img src="../IMAGE/group.png" alt="" role="presentation"></span> 
+    <span class="notification"><img src="../IMAGE/notification.png" alt="" role="presentation"></span> 
+    <h5>2</h5>
+  </div>
+  <div id="spaceChat" class="spaceChat"></div>
+  <div class="EnterChat">
+    <input id="message" type="text" placeholder="Nhập tin nhắn " oninput="changText()" onkeydown="checkEnter(event)">
+    <span ><img src="../IMAGE/attach.svg" alt="" role="presentation" Onclick="Attach()"></span> 
+    <span id="submit"  style="display: none; "><img style="width:30px;height:30px" src="../IMAGE/submit.png" alt="" role="presentation" Onclick="Submit()"></span>
+  </div>
+</div>
 
 </html>
+<script>
+   function Chat() 
+   {
+      var chatbox = document.getElementById("Chatbox");
+      // Kiểm tra trạng thái của Chatbox và thay đổi display
+      if (chatbox.style.display === "none" || chatbox.style.display === "") {
+          chatbox.style.display = "block";  // Hiển thị chatbox
+      } else {
+          chatbox.style.display = "none";  // Ẩn chatbox khi nhấn lại
+      }
+  }
+  function Attach()
+  {
+    
+  }
+  function changText()
+  {
+    var text=document.getElementById("message");
+    var submit=document.getElementById("submit");
+    if(text.value!=="")
+    {
+      submit.style.display="block";
+    }
+    else
+    {
+      submit.style.display="none";
+    }
+  }
+  function Submit() {
+        var message = document.getElementById("message").value;
+        if (message.trim() !== "") {
+          var h4 = document.createElement("h6");
+        h4.textContent = message;
+
+        // Thêm thẻ h4 vào trong phần spaceChat
+        var spaceChat = document.getElementById("spaceChat");
+        spaceChat.appendChild(h4);
+            // Xóa giá trị textbox sau khi gửi
+            document.getElementById("message").value = "";
+            changText(); // Cập nhật trạng thái hiển thị của nút submit
+            var chatbox = document.querySelector(".spaceChat");
+        chatbox.scrollTop = chatbox.scrollHeight;
+        } else {
+            alert("Vui lòng nhập tin nhắn trước khi gửi.");
+        }
+    }
+  function checkEnter(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định (nếu có)
+            Submit(); // Gọi hàm gửi tin nhắn
+        }
+    }
+</script>

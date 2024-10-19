@@ -1,43 +1,70 @@
-body
+html,body
 {
-    background-color:rgb(12, 14, 16)
+    background-color:rgb(68, 76, 84);
+    height: 100%;
+
 }
 
 #menu
 {
- width: 1000px;
- border: 1px solid #0d0c0c;
- height: 80px;
- background-color: #181818;
+ width: 110px;
+ position:absolute;
+ top:100px;
+ height: 400px;
  font-family: Helvetica,Arial, sans-serif;
- font-size: 15px;
+ font-size: 10px;
  font-weight: bold;
  border-radius: 10px;
- -moz-border-radius: 10px;
- -webkit-border-radius: 10px;
+
 }
-#menu ul
+#menu ul {
+    list-style: none; /* Loại bỏ ký hiệu mặc định của danh sách */
+    margin-top: 0px; /* Khoảng cách từ trên xuống */
+    padding: 0; /* Loại bỏ padding mặc định của ul */
+    display: flex; /* Sử dụng Flexbox cho ul */
+    flex-direction: column; /* Các mục li sẽ được xếp theo chiều dọc */
+    justify-content: center; /* Căn giữa nội dung của ul theo chiều ngang */
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+    background-color: #1f1e1e;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+#menu ul li 
+{   
+    margin: 0px 0; /* Khoảng cách giữa các mục menu (có thể điều chỉnh) */
+    width: 100%; /* Chiều rộng của li (nếu cần thiết) */
+    
+}
+#menu ul li a {
+   
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Đặt chiều hướng dọc để icon ở trên và tiêu đề dưới */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 80px; /* Đặt chiều cao cố định */
+    gap:10px;
+}
+#menu ul li a i
 {
-  margin-top:  30px;
-  margin-left: 100px;
+    font-size: 15px;
 }
-#menu ul li {
-    list-style-type: none;
-    display: inline-block; /*ngang*/
-    margin-left: 0px;
-  }
-  
-#menu ul li a:link 
-{
-   color: #FFF;
-   text-decoration: none;
-   text-transform: uppercase;
-   padding-top: 0px;
-   padding-bottom: 40px;
-   padding-left: 20px;
-   padding-right: 20px;
+
+#menu ul li a:link {
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 80px; /* Chiều cao cố định cho link */
+    padding: 0 0px; /* Giữ padding ngang để có khoảng cách đều */
+    width: 100%;
 }
-              
+            
 #menu ul li a:visited
 {
    color: #FFF;
@@ -48,15 +75,15 @@ body
 #menu ul li a {
     position: relative; /* Đặt vị trí tương đối để sử dụng cho phần tử giả (pseudo-element) */
     display: inline-block; /* Thay đổi thành inline-block để không chiếm toàn bộ chiều rộng */
-    padding: 40px 20px; /* Đặt padding cho cả trên/bên dưới và trái/phải */
+  
 }
 #menu ul li a:after {
     content: ''; /* Tạo ra một phần tử ảo */
     position: absolute;
-    bottom: 20px; /* Đặt vị trí của gạch dưới ở dưới cùng */
+    bottom: 0px; /* Đặt vị trí của gạch dưới ở dưới cùng */
     left: 0; /* Đặt từ bên trái */
     width: 100%; /* Độ dài ban đầu là 100% */
-    height: 2px; /* Độ dày của đường gạch dưới */
+    height: 1px; /* Độ dày của đường gạch dưới */
     background: #FFF; /* Màu sắc của đường gạch dưới */
     -webkit-transform: scaleX(0); /* Ban đầu sẽ không hiển thị (thu nhỏ lại) */
     transform: scaleX(0);
@@ -78,7 +105,7 @@ body
 ._logoTest img {
     position: absolute; /* Đặt hình ảnh ở vị trí tuyệt đối */
     top: 0; /* Đặt nó ở góc trên cùng của trang */
-    left: 5; /* Căn lề trái */
+    left: 40px; /* Căn lề trái */
     width: 180px; /* Chiều rộng logo */
     height: auto; /* Chiều cao tự động dựa trên chiều rộng */
 }
@@ -89,3 +116,185 @@ body
     width: 180px; /* Chiều rộng logo */
     height: auto; /* Chiều cao tự động dựa trên chiều rộng */
 }
+
+#divContact
+{
+    position: absolute; 
+    right:20px;
+    bottom:100px;
+    width:100px;
+    height:100px;
+    display: flex; /* Sử dụng flex để xếp các hình ảnh theo hàng ngang */
+    flex-direction: column; /*dọc*/
+    align-items: center; /* Đảm bảo các hình ảnh căn giữa theo chiều dọc */
+    gap: 20px
+        
+}
+._logoContact img { /* Đặt hình ảnh ở vị trí tuyệt đối */
+    width: 48px; /* Chiều rộng logo */
+    height: 48px; /* Chiều cao tự động dựa trên chiều rộng */
+}
+.h5
+{
+    position: absolute; 
+    color:#FFF;
+}
+#formDiv
+{
+    position: absolute; 
+    top:200px;
+    bottom:200px;
+    width: 80%;
+    height: 300px;
+    display: flex; /* Sử dụng Flexbox */
+    gap: 10px;/*tạo khoảng cách giữa các div con*/
+    justify-content: center; /* Căn giữa các div con theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    flex-wrap: wrap; /* Cho phép các div con xuống dòng khi không đủ không gian */
+   left:150px;
+}
+#formCL_SV
+{
+    opacity: 0.5;
+    border: 1px solid #0d0c0c; /* màu viền*/
+    background-color: #181818;
+    width:400px;
+    height: 300px;
+    border-radius: 30px;
+
+}
+._logoConnect img {
+  
+    width: 230px; /* Chiều rộng logo */
+    height: 230px; /* Chiều cao tự động dựa trên chiều rộng */
+}
+#Chatbox
+{
+    position: absolute; 
+    right:80px;
+    bottom: 150px;
+    width:370px;
+    opacity: 0.8;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #635151; /* màu viền*/
+    background-color: #181818;
+    border-radius: 20px;
+
+}
+.titleChat
+{
+    width:auto;
+    height:80px;
+    border-bottom: 1px solid #464444; /* màu viền*/
+    background-color: #181818;
+    border-top-left-radius:20px;
+    border-top-right-radius:20px;
+    display: flex; /* Sử dụng flex để xếp các hình ảnh theo hàng ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; 
+}
+.logoGroup img
+{
+    
+    height:58px;
+    width:58px;
+}
+.notification img
+{
+    position: absolute; 
+    margin-top:1px;
+    width:20px;
+    height:20px;
+
+}
+.titleChat h5
+{
+    position: absolute; 
+    top:21px;
+    margin-left: 78px;
+    color:#FFF;
+}
+.spaceChat
+{
+    width:auto;
+    height:350px;
+    background-color: #181818;
+    overflow-y: auto;
+    display: block;
+    padding-right:10px;
+    padding-bottom:10px;
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn cho IE và Edge */
+    scrollbar-width: none;  /* Ẩn thanh cuộn cho Firefox */
+   
+  
+}
+h4 {
+    margin-left:100px;
+    font-size: 15px;
+    color: #333; /* Màu chữ */
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+    padding: 10px; /* Đệm bên trong */
+    background-color: #f1f1f1; /* Màu nền */
+    border-radius: 15px; /* Bo tròn các góc */
+    border: 1px solid #ccc; /* Đường viền */
+    display: inline-block; /* Chiều rộng dựa vào nội dung */
+    opacity:0.8;
+    max-width: 50%; /* Giới hạn chiều rộng */
+    word-wrap: break-word; /* Tự xuống dòng nếu quá dài */
+    float: right; /* Căn lề phải */
+    clear: both; /*mỗi thẻ nằm trên 1 dòng mới*/
+}
+h6 {
+   
+    font-size: 15px;
+    color: #333; /* Màu chữ */
+    margin: 10px 0px 0px 10px; /* Khoảng cách trên và dưới */
+    padding: 10px; /* Đệm bên trong */
+    background-color: #f1f1f1; /* Màu nền */
+    border-radius: 15px; /* Bo tròn các góc */
+    border: 1px solid #ccc; /* Đường viền */
+    display: inline-block; /* Chiều rộng dựa vào nội dung */
+    opacity:0.8;
+    max-width: 50%; /* Giới hạn chiều rộng */
+    word-wrap: break-word; /* Tự xuống dòng nếu quá dài */
+    float: left; /* Căn lề trái */
+    clear: both; /*mỗi thẻ nằm trên 1 dòng mới*/
+}
+.EnterChat
+{
+    width:100%;
+    height:70px;
+    border-top: 1px solid #464444; /* màu viền*/
+    background-color: #181818;
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+    /* Căn giữa nội dung bên trong */
+    display: flex; /* Sử dụng flex để xếp các hình ảnh theo hàng ngang */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+     gap: 10px;
+}
+.EnterChat input[type="text"]
+{   
+   
+    width: 80%; /* Tùy chỉnh độ rộng */
+    margin-left:5px;
+    height: 40px; /* Tùy chỉnh chiều cao */
+    background-color: #262525;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    padding-left: 20px; 
+    border-radius: 30px;
+    color:#FFF;
+    outline: none; /* Loại bỏ outline */
+    box-shadow: none; /* Loại bỏ box-shadow */
+
+
+}
+
+
+
+
+
